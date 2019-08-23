@@ -19,8 +19,6 @@ def index(request):
 			messages.error(request, 'Your account has been disabled')
 			return redirect(index)
 		
-		print('Invalid login')
-		messages.error(request, 'Invalid login')
 		return redirect(index)
 
 	return render(request, 'index.html')
