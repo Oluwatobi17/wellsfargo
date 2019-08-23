@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Account Summary</title>
+	
+	<link rel="stylesheet" href="{% static '/homepage_ret.css' %}">
+	<link href="https://www.wellsfargo.com/" rel="canonical">
+	<link rel="icon" href="https://www.wellsfargo.com/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+	<header role="banner">
+	   	<div id="masthead" class="html5header c1 nxg">	
+	        <div class="wfLogoStripParent">
+	            <div class="wfLogoStripChild">
+				    <div id="brand">
+						<img alt="Wells Fargo Home Page" role="img" src="{% static '/homepage-horz-logo.svg' %}">
+						<!-- {% static '/homepage-horz-logo.svg -->
+		            </div>
+				    <div id="topSearch">
+						<ul>
+							<li role="presentation"><a href="/account/pay" class="signIn signLockImg"><img alt="Secure" class="navimg" role="img" src="{% static '/homepage-lock.svg' %}"> Pay</a></li>
+						</ul>
+					</div>
+	        	</div>
+	    	</div>
+	    </div>
+	</header>
+
+	<nav id="fatNavParent" aria-label="products and services">
+		<ul id="fatnav">
+			<li>
+				<a id="bankingTab" href="{% url 'account' %}" aria-expanded="false" data-navitem="banking" class="navLevel1" style="font-weight: bolder;">Account Summary</a><div id="banking" class="navItem hide" role="region" aria-labelledby="bankingTab" style="display: none;">
+				<h2 class="hide">Banking</h2>
+
+				<div><br style="clear:both"></div>
+			</li>
+		</ul>
+	</nav>
+	<ul id="messagelist">	
+		{% if messages %}
+			{% for message in messages %}
+				<li id="message" {% if message.tags %} class="{{message.tags}}" {% endif %}>
+					{{message}}
+				</li>
+			{% endfor %}
+		{% endif %}
+	</ul>
+	<div class="left mainbody">
+		<h1>Account Summary</h1>
+		<div class="summary">
+			<div class="left">
+				<span class="minusign">Checking: {{user.first_name}} {{user.last_name}}</span>
+				<span class="accnum">XXXXXXX810</span>
+			</div>
+
+			<div class="right">
+				<h1 class="money"><sup>$</sup> {{user.amount}}</h1>
+				<p class="nextpay">Available Balance</p>
+			</div>
+		</div>
+
+		<table>
+			<tr>
+				<th class="description" align="left">Description</th>
+				<th class="moneycost" align="right">Amount</th>
+			</tr>
+
+			<tr class="grey">
+				<td class="content" align="left">Last Payment Receive!</td>
+				<td class="content" align="right">${{user.lastpayment}}</td>
+			</tr>
+		</table>
+
+		<a href="/account/maketransfer" class="paybutton">Make a Payment</a>
+
+		<br>
+		<div class="butpanel">
+			<div class="panelmenu">
+				<a href="/account/maketransfer"><h2>Make a Payment</h2></a>
+			</div>
+
+			<div class="panelmenu">
+				<a href="/account/autopay"><h2>Enroll in Auto Pay</h2></a>
+			</div>
+			<div class="panelmenu">
+				<a href="/account/eStatements"><h2>View eStatements</h2></a>
+			</div>
+			<div class="panelmenu">
+				<a href="/account/paymenthistory"><h2>View Payment history</h2></a>
+			</div>
+			<div class="panelmenu">
+				<a href="/account/notifications"><h2>Manage Notifications</h2></a>
+			</div>
+			<div class="panelmenu">
+				<a href="/account/paymentquotes"><h2>Get Payment Quotes</h2></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="left sidenav">
+		<div class="sidebarcontainer">
+			<h1 class="white">Welcome to eServices</h1>
+
+			<p class="white">Your last login was {{user.last_login}}</p>
+		</div>
+
+		<ul>
+			<a href="{% url 'signoff' %}"><li class="sidenavbut">Sign Off</li></a>
+			<li class="sidenavbut sidenavbutcover contact-img">Contact Us</li>
+		</ul>
+
+		<div class="sidebarcontainer">
+			<h5 class="white">1-080-299-8044</h5>
+
+			<p class="white">Monday - Friday</p>
+			<br>
+			<p class="white">5 am - 2 pm PT</p>
+			<p class="white">7 am - 9 pm CT</p>
+			<p class="white">8 am - 10 pm ET</p>
+		</div>
+
+		<ul>
+			<li class="sidenavbut sidenavbutcover">Recommended Services</li>
+		</ul>
+
+		<div class="sidebarcontainer">
+			<p class="white recommendation">eServices Tour <a href="/account/eServices"><span class="right open">+</span></a></p>
+			<p class="white recommendation">Financial Education <a href="/account/education"><span class="right open">+</span></a></p>
+		</div>
+	</div>
+
+
+
+<footer role="contentinfo">
+	<div class="html5footer" id="pageFooter">
+          
+            
+                <div class="c9content">
+    
+
+		<img alt="Together we&#39;ll go far" role="img" src="{% static '/homepage_footer_stagecoach.svg' %}">
+	
+    
+    
+    <nav role="navigation">
+            	<div class="html5nav">
+					<ul class="navList">						
+                        
+                        <li>
+          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="https://www.wellsfargo.com/about/?linkLoc=footer">About Wells Fargo</a>
+        </li>
+                        
+                        <li>
+          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="https://www.wellsfargo.com/about/careers/">Careers</a>
+        </li>
+                        
+                        <li>
+          <a href="https://www.wellsfargo.com/privacy-security/">PRIVACY, Cookies, Security &amp; Legal</a>
+        </li>
+                        
+                        <li>
+          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="https://www.wellsfargo.com/privacy-security/fraud/report/">Report Fraud</a>
+        </li>
+                        
+                        <li>
+          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="https://www.wellsfargo.com/sitemap">Sitemap</a>
+        </li>
+                        
+                        <li>
+          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="https://www.wellsfargo.com/about/diversity/">Diversity &amp; Accessibility</a>
+        </li>
+                        
+                        <li>
+          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="https://www.wellsfargo.com/online-banking/online-access-agreement/">Online Access Agreement</a>
+        </li>
+                        
+                        <li>
+          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="https://www.wellsfargo.com/privacy-security/privacy/online/#adchoices">Ad Choices</a>
+        </li>
+                                               
+					</ul>
+				</div>
+			</nav>
+    
+
+</div>            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+        
+
+        
+            <div class="c42">
+                 <div class="c20">
+                      
+                        
+                      
+                        
+                            <div class="socialIcons"><a class="iconFacebook" title="Facebook" href="https://www.facebook.com/wellsfargo"><img class="facebookIcon" alt="Facebook" role="img" src="{% static '/home-sprite-image(1).png' %}"> &nbsp;</a> <a class="iconLinkedIn" title="LinkedIn" href="https://www.linkedin.com/company/wellsfargo"><img class="linkedInIcon" alt="LinkedIn" role="img" src="{% static '/home-sprite-image.png' %}"> &nbsp;</a> <a class="iconInstagram" title="Instagram" role="img" href="https://instagram.com/wellsfargo/"><img class="instagramIcon" alt="Instagram" src="{% static '/home-sprite-image(1).png' %}"> &nbsp;</a> <a class="iconPinterest" title="Pinterest" role="img" href="https://www.pinterest.com/wellsfargo/"><img class="pinterestIcon" alt="Pinterest" src="{% static '/home-sprite-image.png' %}"> &nbsp;</a> <a class="iconYoutube" title="YouTube" role="img" href="https://www.youtube.com/user/wellsfargo"><img class="youtubeIcon" alt="YouTube" src="{% static '/home-sprite-image(1).png' %}"> &nbsp;</a> <a class="iconTwitter" title="Twitter" role="img" href="https://twitter.com/wellsfargo"><img class="twitterIcon" alt="Twitter" src="{% static '/home-sprite-image.png' %}"> &nbsp;</a></div>                        
+                      
+                        
+                            		<div class="c20body" data-numbered="false">
+<p>We provide links to external websites for convenience. Wells Fargo does not endorse and is not responsible for their content, links, privacy, or securities policies.</p>
+<p>
+				<strong>Important notice regarding use of cookies:</strong>
+				 By continuing to use this site, you agree to our use of cookies as described in our 
+				<a href="https://www.wellsfargo.com/privacy-security/privacy/online/">Digital Privacy and Cookies Policy</a>
+				.
+			</p>
+<p>Investment products and services are offered through Wells Fargo Advisors. Wells Fargo Advisors is a trade name used by Wells Fargo Clearing Services, LLC (WFCS) and Wells Fargo Advisors Financial Network, LLC, Members <a href="https://www.wellsfargo.com/exit/sipc/">SIPC</a>, separate registered broker-dealers and non-bank affiliates of Wells Fargo &amp; Company. <em>WellsTrade</em><sup>®</sup> and Intuitive Investor<sup>®</sup> accounts are offered through WFCS.</p>
+</div>
+	                        
+                      
+                        
+                            <div class="c20notnot"><strong>Investment and Insurance Products are:</strong>
+<ul>
+<li><strong>Not insured by the FDIC or any Federal Government Agency</strong></li>
+<li><strong>Not a Deposit or Other Obligation of, or Guaranteed by, the Bank or Any Bank Affiliate</strong></li>
+<li><strong>Subject to Investment Risks, Including Possible Loss of the Principal Amount Invested</strong></li>
+</ul>
+</div>                        
+                      
+                        
+                            <div class="c20body" data-numbered="false" data-cid="tcm:84-146986-16" data-ctid="tcm:91-1924-32">
+
+          <p>Deposit products offered by Wells Fargo Bank, N.A. Member FDIC.
+</p>
+        
+</div>                        
+                      
+                        
+                            <p class="equalHousingImg"><span class="equalHousingIcon"><img alt="icon-equal-housing" src="{% static '/home-sprite-image(1).png' %}"></span> <strong>Equal Housing Lender</strong></p>
+<p>© 1999 - 2019 Wells Fargo. All rights reserved. NMLSR ID 399801</p>                        
+                      
+                        
+                    
+                 </div>
+            </div>
+        
+    </div>
+</footer>
+
+	<script src="{% static '/jquery.js' %}"></script>
+	<script type="text/javascript">
+		setTimeout(function(){
+			$('#messagelist').toggle(200)
+		}, 5000)
+	</script>
+</body>
+</html>

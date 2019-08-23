@@ -1,0 +1,205 @@
+a{
+	text-decoration: none;
+}
+.c1 #topSearch ul{
+	margin: 0px;
+}
+.navimg{
+	margin-right: 30px;
+	margin-right: 30px;
+}
+#fatnav li a.navLevel1{
+	font-weight: 0;
+}
+.left{
+	float: left;
+	display: inline;
+	box-sizing: border-box;
+}
+.right{
+	float: right;
+	display: inline;
+	box-sizing: border-box;
+}
+.sidenav{
+	background: #696969;
+	width: 30%;
+	border-left: 2px solid #ccc;
+	box-sizing: border-box;
+}
+.mainbody{
+	padding: 20px;
+	width: 70%;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+.summary{
+	background: #dcdcdc;
+	height: 70px;
+	border-left: 7px solid #d71e2b;
+	width: 100%;
+}
+.minusign{
+	margin: 13px 5px;
+	padding: 2px 0px 2px 10px;
+	border-radius: 50%;
+	font-weight: bolder;
+	font-size: 15px;
+	display: inline-block;
+	color: #d71e2b;
+}
+.accnum{
+	font-size: 16px;
+	padding: 0px 0px 2px 10px;
+	display: block;
+	margin-left: 10px;
+	margin-top: -10px;
+}
+.money{
+	padding: 5px;
+}
+.nextpay{
+	font-size: 13px;
+	margin-top: -10px;
+	margin-left: 20px;
+}
+.mainbody table{
+	width: 100%;
+	margin: 20px 10px;
+	padding: 20px;
+}
+.mainbody .grey{
+	background: #dcdcdc;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.mainbody tr th{
+	font-size: 16px;
+	padding: 15px 0px; 
+}
+.mainbody .description{
+	width: 80%;
+}
+.mainbody .moneycost{
+	width: 20%;
+}
+table .content{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 10px;
+	margin-top: 12px;
+}
+.paybutton{
+	background: #6495ed;
+	padding: 10px 8px;
+	color: white;
+	float: right;
+}
+.butpanel{
+	width: 95%;
+	height: 90px;
+	background: #dcdcdc;
+	margin-top: 50px;
+	padding: 0px 30px;
+	box-sizing: border-box;
+}
+.panelmenu{
+	box-sizing: border-box;
+	float: left;
+	display: inline;
+	padding: 7px;
+	max-width: 15%;
+	height: 100%;
+	margin-right: 1px;
+	background: white;
+}
+.panelmenu h2{
+	color: #6495ed;
+	text-align: center;
+	font-family: arial;
+	padding-top: 10px;
+	font-size: 14px;
+}
+.white{
+	color: white;
+	font-family: arial;
+}
+.sidebarcontainer{
+	padding: 14px;
+}
+.sidenavbut{
+	color: white;
+	font-family: arial;
+	font-size: 15px;
+	padding: 10px;
+}
+.sidenavbutcover{
+	background: #808080;
+}
+.open{
+	cursor: pointer;
+	color: white;
+}
+.recommendation{
+	border-bottom: 1px solid white;
+	padding: 10px 0px;
+}
+#topSearch li{
+	margin-right: 10px;
+}
+ul#messagelist {
+    padding: 0;
+    margin: 0;
+}
+.registext, .booktext{
+	cursor: pointer;
+}
+.white{
+	color: white;
+	font-family: arial;
+}
+.black{
+	color: black;
+	font-family: arial;
+}
+ul#messagelist li {
+    display: block;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px 10px 10px 65px;
+    margin: 0 0 0px 0;
+    background-size: 16px auto;
+    color: #333;
+    font-family: arial;
+}
+
+ul#messagelist li.warning {
+    background: #ffc url(/static/admin/img/icon-alert.svg) 40px 14px no-repeat;
+    background-size: 14px auto;
+}
+
+ul#messagelist li.error {
+    background: #ffefef;
+    background-size: 16px auto;
+   	font-family: arial;
+   	list-style-image: url(/static/admin/img/icon-no.svg)
+}
+.error{
+	background: #ffefef;
+    background-size: 16px auto;
+   	padding: 13px;
+   	list-style-image: url(/static/admin/img/icon-no.svg) 40px 12px no-repeat;
+   	list-style: none;
+}
+footer{
+	margin-top: 70px;
+}
+.sidenav ul{
+	padding: 0px;
+	margin: 0px;
+}
+.sidenav li{
+	padding-left: 10px;
+	list-style: none;
+	margin-left: 0px;
+}
