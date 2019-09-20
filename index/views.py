@@ -23,6 +23,9 @@ def index(request):
 
 	return render(request, 'index.html')
 
+# 
+#password: linda1273
+#Username: Linda89 
 
 def account(request):
 	if request.user.is_authenticated:

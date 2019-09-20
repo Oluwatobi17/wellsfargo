@@ -25,7 +25,7 @@ SECRET_KEY = 'yw5x-#e&9gqh$^sm9s%um1+a$uhs*(^n2a2@l50q53e8t$8b$z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wellsfargos.herokuapp.com']
+ALLOWED_HOSTS = ['wellfargos.herokuapp.com']
 
 
 # Application definition
