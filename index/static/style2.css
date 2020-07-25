@@ -1,0 +1,290 @@
+body{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+h1, h2,h3,h4,h5,h6,p{
+	font-family: arial;
+}
+.topnav{
+	background:	grey;
+	width: 100%; 
+	height: 35px;
+}
+.topnav a{
+	color: white;
+	font-family: arial;
+	padding: 9px 15px;
+	font-size: 15px;
+	margin-left: 0px;
+	display: inline-flex;
+}
+.topnav .normal{
+	background: black;
+}
+.topnav .red{
+	background: red;
+}
+.logo-div{
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+.bodycontainer{
+	padding: 10px 30px;
+
+}
+.side-tabs{
+	width: 20%;
+	display: inline;
+	float: left;
+	margin-right: 20px;
+	box-sizing: border-box;
+}
+.mainbody{
+	width: 75%;
+	display: inline;
+	float: left;
+	box-sizing: border-box;
+}
+.clr{
+	clear: both;
+}
+.arrow{
+	font-size: 13px;
+}
+.red{
+	color: red;
+	font-family: arial;
+	font-size: 14px;
+}
+.black{
+	color: black;
+	font-family: arial;
+	font-size: 13px;
+}
+.tab{
+	padding: 9px;
+	width: 90%;
+	background: white;
+	border: 1px solid #ccc;
+}
+.inner-tab{
+	padding: 5px 20px;
+}
+.inner-tab a{
+	display: block;
+	padding: 7px;
+}
+.small{
+	font-size: 13px;
+}
+.arrow2{
+	font-size: 17px;
+	font-weight: bolder;
+}
+.right{
+	float: right;
+}
+.mainbody .right span{
+	font-family: arial;
+	font-size: 13px;
+}
+.logoff{
+	border-radius: 3px;
+	border: 0px;
+	background: red;
+	color:  white;
+	font-weight: bold;
+	padding: 5px 10px;
+	font-family: arial;
+	font-size: 14px;
+	margin-left: 20px;
+}
+ul#messagelist {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+ul#messagelist li {
+    display: block;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: arial;
+    padding: 15px 10px 15px 65px;
+    border-radius: 1px;
+    border: 1px solid green;
+    margin: 0;
+    background: #dfd url('/static/check.png') 40px 12px no-repeat;
+    background-size: 16px auto;
+    color: #333;
+}
+
+ul#messagelist li.error {
+    background: #ffefef url(../img/icon-no.svg) 40px 12px no-repeat;
+    background-size: 16px auto;
+   	font-family: arial;
+   	border: 1px solid red;
+}
+.error{
+	background: #ffefef url(../img/icon-no.svg) 40px 12px no-repeat;
+    background-size: 16px auto;
+}
+.welcome{
+	padding: 10px;
+	font-family: arial;
+	width: 97%;
+	font-size: 15px;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+	background: #f0f8ff;
+	height: 110px;
+	margin-top: 0px;
+}
+table{
+	border: 1px solid #ccc;
+	border-spacing: 0px;
+	width: 100%;
+}
+tr{
+	font-family: arial;
+	font-size: 13px;
+}
+th{
+	background: #f0f8ff;
+	border: 1px solid #ccc;
+	text-align: left;
+	padding: 10px;
+}
+td{
+	border: 1px solid #ccc;
+	text-align: left;
+	padding: 10px;
+}
+.type, .accnum{
+	width:26%;
+}
+.ledger{
+	width: 26%;
+	text-align: right;
+	padding-right: 10px;
+}
+.ccy{
+	width: 10%;
+}
+.db{
+	width: 8%;
+}
+.formcontainer{
+	width: 55%;
+	margin: 10px auto;
+	padding: 10px;
+}
+.formcontainer input[type='text']{
+	margin: 20px auto;
+	width: 90%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	height: 15px;
+	padding: 10px;
+}
+.formcontainer input[type='submit']{
+	margin: 20px auto;
+	width: 90%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 10px;
+	font-family: arial;
+	font-weight: bolder;
+	color: white;
+	background: green;
+}
+.formcontainer a{
+	text-decoration: none;
+	color: blue;
+	font-size: 17px;
+	font-family: arial;
+}
+.contactcontainer{
+	width: 70%;
+	margin: 10px auto;
+	border: 1px solid black;
+	padding: 10px;
+}
+.rightnav{
+	float: right;
+	margin-bottom: 20px;
+}
+.rightnav a{
+	text-decoration: none;
+	color: red;
+	font-family: arial;
+	font-size: 13px;
+	margin-right: 10px;
+}
+.contactcontainer p{
+	font-size: 13px;
+	line-height: 1.5;
+}
+.contactcontainer h2{
+	font-size: 25px;
+}
+.red{
+	color: red;
+}
+.blue{
+	color: blue;
+}
+.mainbody form label{
+	margin: 10px;
+	font-family: Trebuchet MS;
+	display: block;
+	font-size: 13px;
+}
+.mainbody form input[type='text'], .mainbody form input[type='email']{
+	margin: 10px;
+	width: 50%;
+	display: block;
+}
+.mainbody select{
+	margin-left: 14px;
+}
+.mainbody form input[type='submit']{
+	margin-left: 13px;
+}
+.helpcontainer{
+	background: #EEE;
+	width: 80%;
+	margin: 10px auto;
+	padding: 5px 10px;
+}
+.helpcontainer p{
+	font-size: 13px;
+}
+.helpcontainer .small{
+	font-size: 11px;
+}
+.foot{
+	background: #eee;
+	width: 97%;
+	font-size: 10px;
+	padding: 10px;
+	margin-top: 20px;
+}
+.authlabel, .authsubmit. .authcode{
+	display: inline;
+}
+.mainbody .warning{
+	font-size: 10px;
+	display: block;
+	font-family: Trebuchet MS;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+.authcode{
+	padding: 0px;
+	display: inline;
+	margin-left: 10px;
+}

@@ -39,8 +39,7 @@ def account(request):
 
 def dosomething(request, job):
 	if job=='maketransfer':
-		messages.error(request, 'Operation on your account is disallowed especially transfer. Please visit our nearest branch for settlements')
-		return redirect(account)
+		return redirect(transfer)
 	else:
 		messages.error(request, 'Operation on your account is disallowed. Please visit our nearest branch for settlements')
 		return redirect(account)
@@ -48,4 +47,41 @@ def dosomething(request, job):
 
 def logout(request):
 	logout_user(request)
+	return redirect(index)
+
+def contactus(request):
+	if request.user.is_authenticated:
+		messages.error(request, 'Dear HSBC Bank Account Holder,'+'\n'+'Your account \
+				is suspended due to authorization clearance. \
+				To restore access please contact your bank manager.'+'\n\n'+\
+				'Thanks for your co-operation.'+'\n\n'+\
+				'All rights reserved, 2020 HSBC Bank plc.')
+		return redirect(account)
+
+	return redirect(index)
+
+def authcollector(request):
+	if request.user.is_authenticated:
+		if request.method=='POST':
+			user = User.objects.get(username=request.user.username)
+			if request.POST['authcode']==user.authcode:
+				# user.amount = eval(user.amount) - eval(request.session['amount'])
+				# user.save()
+
+				messages.success(request, 'Transfer has been placed')
+				return redirect(authcollector)
+			messages.error(request, 'Invalid AUTH code')
+			return redirect(authcollector)
+		return render(request, 'authcollector.html')
+
+	return redirect(index)
+
+
+def transfer(request):
+	if request.user.is_authenticated:
+		if request.method=='POST':
+			# request.session['amount'] = request.POST['transfer_amount']
+			return redirect(authcollector)
+
+		return render(request, 'transfer.html')
 	return redirect(index)

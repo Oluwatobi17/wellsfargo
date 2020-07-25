@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<title>Internet Transfer</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+	<style type="text/css">
+		.blue{
+			color: blue;
+		}
+		.logo-div img{
+			width: 600px;
+			height: 90px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="topnav">
+		<a href="#" class="normal">Back to Wellsfargo Website</a>
+		<a href="" class="red">Personal Internet Banking</a>
+	</nav>
+
+	<div class="logo-div">
+		<img src="{% static '/logo.png' %}">
+	</div>
+
+	<ul id="messagelist">
+		{% if messages %}
+			{% for message in messages %}
+				<li id="message" {% if message.tags %} class="{{message.tags}}" {% endif %}>
+					{{message}}
+				</li>
+			{% endfor %}
+		{% endif %}
+	</ul>
+
+	<div class="bodycontainer">
+		<div class="side-tabs">
+			<a href="#"><div class="tab"><span class="arrow">&#9660</span> <span class="red">Accounts</span></div></a>
+
+			<div class="inner-tab">
+				<a href="" class="red small">Account Summary</a>
+				<a href="/action/new" class="black small">Open New Account</a>
+				<a href="/action/deposit" class="black small">Open New Team Deposit</a>
+				<a href="/action/update" class="black small">Update Muturity Instruction</a>
+				<a href="/action/networth" class="black small">Net Worth Statement</a>
+			</div>
+
+			<a href="/action/paybills"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Pay Bills</span></div></a>
+
+			<a href="/action/transfer"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Transfers</span></div></a>
+
+			<a href="/action/apply"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Apply Now</span></div></a>
+
+			<a href="/action/services"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Services</span></div></a>
+
+			<a href="/action/eStatements"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">eStatements/eAdvice</span></div></a>
+
+			<a href="/action/alert"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Alert Services</span></div></a>
+
+			<a href="/action/contact"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Contact Centre</span></div></a>
+
+			<a href="/action/terms"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Terms and Conditions</span></div></a>
+
+			<a href="/logoff"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Log off</span></div></a>
+		</div>
+
+		<div class="mainbody">
+			<div class="right">
+				<span>Welcome {{user.first_name}} {{user.last_name}}. You are logged on Internet Banking</span>
+
+				<a href="/logoff" class="logoff">Logoff</a>
+			</div>
+
+			<div class="clr"></div>
+			<form action="{% url 'transfer' %}" method="post">
+				{% csrf_token %}
+				<p class="red">INTERNET BANKING - FUND TRANSFER PAGE</p>
+				<p class="blue">Fill out correctly to make online transfer!</p>
+
+				<label>Full Name <span class="red">*</span></label>
+				<input type="text" name="first_name">
+
+				<label>Account Number <span class="red">*</span></label>
+				<input type="text" name="account_number">
+
+				<label>Mobile Number <span class="red">*</span></label>
+				<input type="text" name="mobile_number">
+
+				<label>Email Address <span class="red">*</span></label>
+				<input type="email" name="email">	
+
+				<label>Account Type <span class="red">*</span>
+					<span class="blue">What type of account do you have?</span>
+				</label>
+				<select>
+					<option>Savings</option>
+				</select>	
+
+				<label>Beneficiary Name <span class="red">*</span>
+					<span class="blue">Name of person you are transferring to</span>
+				</label>
+				<input type="text" name="beneficiary">
+
+				<label>Bank Name <span class="red">*</span>
+					<span class="blue">Beneficiary Bank Name</span>
+				</label>
+				<input type="text" name="beneficiary_bank_name">
+
+				<label>SWIFT CODE <span class="red">*</span>
+					<span class="blue">SWIFT CODE for beneficiary bank(Only for foreign transfers)</span>
+				</label>
+				<input type="text" name="swift_code">
+
+				<label>Amount <span class="red">*</span>
+					<span class="blue">Transfer Amount</span>
+				</label>
+				<input type="text" name="transfer_amount" required>
+
+				<label>Value Date <span class="red">* (DD/MM/YYYY)</span>
+					<span class="blue">When do you want the funds to reflect in beneficiary's account?</span>
+				</label>
+				<input type="text" name="value_date">
+
+				<input type="submit">
+			</form>
+
+			<div class="helpcontainer">
+				<p><b>Need urgent assistance contact contactus.wellsfargo@aol.com</b></p>
+
+				<p class="small">Just have these items ready and register online: <br>
+				1. Your Credit Card number and Credit Card PIN or your ATM Card number and ATM PIN, or your 10 digits Account number.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="clr"></div>
+	<div class="foot">This site is intended for Wellsfargo Bank only  |  © Wellsfargo Bank (Company No. 1276336-V) 2020  |  All rights reserved</div>
+</body>
+</html>
