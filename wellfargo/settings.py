@@ -26,7 +26,7 @@ SECRET_KEY = 'yw5x-#e&9gqh$^sm9s%um1+a$uhs*(^n2a2@l50q53e8t$8b$z'
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['wellsfagobank.herokuapp.com']
+ALLOWED_HOSTS = ['wellsfargobanks.herokuapp.com']
 
 
 # Application definition
