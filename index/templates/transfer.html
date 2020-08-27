@@ -17,8 +17,8 @@
 </head>
 <body>
 	<nav class="topnav">
-		<a href="#" class="normal">Back to Wellsfargo Website</a>
-		<a href="" class="red">Personal Internet Banking</a>
+		<a href="{% url 'index' %}" class="normal">Back to Wellsfargo Website</a>
+		<a href="{% url 'account' %}" class="red">Personal Internet Banking</a>
 	</nav>
 
 	<div class="logo-div">
@@ -40,7 +40,7 @@
 			<a href="#"><div class="tab"><span class="arrow">&#9660</span> <span class="red">Accounts</span></div></a>
 
 			<div class="inner-tab">
-				<a href="" class="red small">Account Summary</a>
+				<a href="{% url 'account' %}" class="red small">Account Summary</a>
 				<a href="/action/new" class="black small">Open New Account</a>
 				<a href="/action/deposit" class="black small">Open New Team Deposit</a>
 				<a href="/action/update" class="black small">Update Muturity Instruction</a>
@@ -63,14 +63,14 @@
 
 			<a href="/action/terms"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Terms and Conditions</span></div></a>
 
-			<a href="/logoff"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Log off</span></div></a>
+			<a href="{% url 'signoff' %}"><div class="tab"><span class="arrow2">&#8250</span> <span class="black">Sign Off</span></div></a>
 		</div>
 
 		<div class="mainbody">
 			<div class="right">
 				<span>Welcome {{user.first_name}} {{user.last_name}}. You are logged on Internet Banking</span>
 
-				<a href="/logoff" class="logoff">Logoff</a>
+				<a href="{% url 'signoff' %}" class="logoff">Sign Off</a>
 			</div>
 
 			<div class="clr"></div>
@@ -127,7 +127,7 @@
 			</form>
 
 			<div class="helpcontainer">
-				<p><b>Need urgent assistance contact contactus.wellsfargo@aol.com</b></p>
+				<p><b>Need urgent assistance contact customer_service-desk@email.com</b></p>
 
 				<p class="small">Just have these items ready and register online: <br>
 				1. Your Credit Card number and Credit Card PIN or your ATM Card number and ATM PIN, or your 10 digits Account number.</p>

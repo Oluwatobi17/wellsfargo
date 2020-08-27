@@ -56,11 +56,21 @@
 			</div>
 
 			<div class="right">
-				<h1 class="money"><sup>$</sup> {{user.amount}}</h1>
+				<h1 class="money"><sup></sup>€ {{user.amount}}</h1>
 				<p class="nextpay">Available Balance</p>
 			</div>
 		</div>
+		<div class="summary">
+			<div class="left">
+				<span class="minusign">Checking: {{user.first_name}} </span>
+				<span class="accnum">XXXXXXX620</span>
+			</div>
 
+			<div class="right">
+				<h1 class="money"><sup></sup>€ 9,000.00</h1>
+				<p class="nextpay">Available Balance</p>
+			</div>
+		</div>
 		<table>
 			<tr>
 				<th class="description" align="left">Payment History</th>
@@ -69,20 +79,20 @@
 
 			<tr class="grey">
 				<td class="content" align="left">XXXXXXX110</td>
-				<td class="content" align="right">$28.120.00</td>
+				<td class="content" align="right">€50,000</td>
 			</tr>
 			<tr class="grey">
 				<td class="content" align="left">XXXXXXX920</td>
-				<td class="content" align="right">$120.980.00</td>
+				<td class="content" align="right">€15,000</td>
 			</tr>
 			<tr class="grey">
 				<td class="content" align="left">XXXXXXX361</td>
-				<td class="content" align="right">$400.000</td>
+				<td class="content" align="right">€10.000</td>
 			</tr>
 
 			<tr class="grey">
 				<td class="content" align="left">XXXXXXX271</td>
-				<td class="content" align="right">$450.900</td>
+				<td class="content" align="right">€7.900</td>
 			</tr>
 		</table>
 
@@ -121,7 +131,9 @@
 
 		<ul>
 			<a href="{% url 'signoff' %}"><li class="sidenavbut">Sign Off</li></a>
-			<li class="sidenavbut sidenavbutcover contact-img">Contact Us</li>
+			<a href="mailto:customer_service-desk@email.com">
+				<li class="sidenavbut sidenavbutcover contact-img">Contact Us<h5 class="white" style="margin-bottom: 5px;">customer_service-desk@email.com</h5></li>
+			</a>
 		</ul>
 
 		<div class="sidebarcontainer">
@@ -174,7 +186,7 @@
         </li>
                         
                         <li>
-          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="https://www.wellsfargo.com/privacy-security/fraud/report/">Report Fraud</a>
+          <a data-cid="tcm:84-147007-16" data-ctid="tcm:91-1866-32" href="mailto:customer_service-desk@email.com">Report Fraud</a>
         </li>
                         
                         <li>
@@ -267,7 +279,7 @@
 	<script src="{% static '/jquery.js' %}"></script>
 	<script type="text/javascript">
 		setTimeout(function(){
-			$('#messagelist').toggle(200)
+			€('#messagelist').toggle(200)
 		}, 5000)
 	</script>
 </body>
