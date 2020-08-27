@@ -38,17 +38,32 @@
 			</li>
 		</ul>
 	</nav>
-	<ul id="messagelist">	
+	<ul id="messagelist">
+		<!-- <li id="message" {% if message.tags %} class="{{message.tags}}" {% endif %}>
+					fsfgsf
+			</li> -->	
 		{% if messages %}
 			{% for message in messages %}
 				<li id="message" {% if message.tags %} class="{{message.tags}}" {% endif %}>
-					{{message}}
+					{{ message }}
 				</li>
 			{% endfor %}
 		{% endif %}
 	</ul>
 	<div class="left mainbody">
 		<h1>Account Summary</h1>
+		<div class="summary">
+			<div class="left">
+				<span class="minusign">Total Available Balance</span>
+				<span class="accnum">{{user.first_name}} {{user.last_name}}</span>
+			</div>
+
+			<div class="right">
+				<h1 class="money"><sup></sup>€ 84,000.00</h1>
+				<p class="nextpay">Available Balance</p>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
 		<div class="summary">
 			<div class="left">
 				<span class="minusign">Checking: {{user.first_name}} {{user.last_name}}</span>
@@ -60,9 +75,10 @@
 				<p class="nextpay">Available Balance</p>
 			</div>
 		</div>
+		<div style="clear: both;"></div>
 		<div class="summary">
 			<div class="left">
-				<span class="minusign">Checking: {{user.first_name}} </span>
+				<span class="minusign">Checking: {{user.first_name}} {{user.last_name}} </span>
 				<span class="accnum">XXXXXXX620</span>
 			</div>
 
@@ -71,6 +87,7 @@
 				<p class="nextpay">Available Balance</p>
 			</div>
 		</div>
+		
 		<table>
 			<tr>
 				<th class="description" align="left">Payment History</th>
@@ -78,21 +95,21 @@
 			</tr>
 
 			<tr class="grey">
-				<td class="content" align="left">XXXXXXX110</td>
-				<td class="content" align="right">€50,000</td>
+				<td class="content" align="left">XXXXXXX810</td>
+				<td class="content" align="right">€750</td>
 			</tr>
 			<tr class="grey">
-				<td class="content" align="left">XXXXXXX920</td>
-				<td class="content" align="right">€15,000</td>
+				<td class="content" align="left">XXXXXXX620</td>
+				<td class="content" align="right">€900</td>
 			</tr>
 			<tr class="grey">
-				<td class="content" align="left">XXXXXXX361</td>
-				<td class="content" align="right">€10.000</td>
+				<td class="content" align="left">XXXXXXX810</td>
+				<td class="content" align="right">€350</td>
 			</tr>
 
 			<tr class="grey">
-				<td class="content" align="left">XXXXXXX271</td>
-				<td class="content" align="right">€7.900</td>
+				<td class="content" align="left">XXXXXXX810</td>
+				<td class="content" align="right">€1,000</td>
 			</tr>
 		</table>
 

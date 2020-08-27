@@ -151,6 +151,11 @@ ul#messagelist {
     padding: 0;
     margin: 0;
 }
+.success{
+	background-size: 16px auto;
+	/*list-style-image: url("{% static '/icon-yes.svg' %}");*/
+	background: #dfd url(/static/admin/img/icon-yes.svg) 40px 12px no-repeat;
+}
 .registext, .booktext{
 	cursor: pointer;
 }

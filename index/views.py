@@ -20,7 +20,6 @@ def index(request):
 			return redirect(index)
 		
 		return redirect(index)
-
 	return render(request, 'index.html')
 
 # 
@@ -29,10 +28,11 @@ def index(request):
 
 def account(request):
 	if request.user.is_authenticated:
+		# messages.success(request, 'Processing transfer...')
 		return render(request, 'account.html', {
 			'user': User.objects.get(username=request.user.username)
 		})
-		
+	
 	return redirect(index)
 
 
@@ -68,8 +68,8 @@ def authcollector(request):
 				# user.amount = eval(user.amount) - eval(request.session['amount'])
 				# user.save()
 
-				messages.success(request, 'Transfer has been placed')
-				return redirect(authcollector)
+				messages.success(request, 'Processing transfer...')
+				return redirect(account)
 			messages.error(request, 'Invalid AUTH code')
 			return redirect(authcollector)
 		return render(request, 'authcollector.html')
